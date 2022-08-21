@@ -1,15 +1,14 @@
-import { type } from 'os';
 import React, { createElement as newEl, useState } from 'react';
+import {Product} from './component/Product'
+import {products} from './data/products'
 
 function App() {
-  const [count, setCount] = useState(0)
-  return newEl('div', {className: 'container'}, [
-    newEl('h1', {className: 'front-bold', key: 1}, `Test JSX ${count}`),
-    newEl('button',  {className: 'py-2 px-4 border', 
-      key: 2,
-      onClick: () => setCount(count +1)
-    }, 'Click me!')
-  ])
+  return (
+    <div className='containet mx-auto max-w-2xl pt-5'> 
+    <Product product={products[0]}/>
+    <Product product={products[1]}/>
+    </div>
+  )
 }
 
 export default App;
