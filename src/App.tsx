@@ -1,4 +1,6 @@
 import React from 'react';
+import { ErrorMessage } from './component/ErrorMessage';
+import { Loader } from './component/Loader';
 import {Product} from './component/Product'
 import {useProducts} from './hooks/product'
 
@@ -7,8 +9,8 @@ function App() {
 
   return (
     <div className='containet mx-auto max-w-2xl pt-5'> 
-    {loading && <p className='text-center'>Loading...</p>}
-    {error && <p className='text-center text-red-600'>{error}</p>}
+    {loading && <Loader/>}
+    {error && <ErrorMessage error={error}/>}
     {products.map(product => <Product product={product} key={product.id}/>)}
 
     </div>
