@@ -22,7 +22,7 @@ export function Product (props:ProductProps){
         </button>
         {details && <div>
             <p>{props.product.description}</p>
-            <p>Rate: <span style={{fontWeight: 'bold'}}>{props.product.rating.rate}</span></p>
+            {props.product.rating && <p>Rate: <span style={{fontWeight: 'bold'}}>{props.product.rating.rate}</span></p>}
         </div>}
     </div>
 }
